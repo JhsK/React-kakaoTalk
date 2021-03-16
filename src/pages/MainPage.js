@@ -1,7 +1,13 @@
 import React from "react";
+import SideBar from "../components/common/SideBar";
 
 const MainPage = () => {
-  return <div>MainPage</div>;
+  return (
+    <>
+      <SideBar />
+      <div>MainPage</div>
+    </>
+  );
 };
 
 export default MainPage;
