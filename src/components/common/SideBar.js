@@ -15,6 +15,7 @@ const StyledSideBar = styled.div`
   height: 520px;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 `;
 
 const StyledMenu = styled.div`
