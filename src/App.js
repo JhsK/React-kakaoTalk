@@ -16,7 +16,6 @@ const StyledTemplate = styled.div`
   z-index: -1;
   background: ${palette.gray[2]};
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
