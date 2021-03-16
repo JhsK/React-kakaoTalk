@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import palette from "../../lib/styles/palette";
+import { Link } from "react-router-dom";
+
 import { BsFillPersonFill, BsFillChatFill } from "react-icons/bs";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { MdInsertEmoticon } from "react-icons/md";
@@ -66,9 +68,15 @@ const SideBar = () => {
   return (
     <StyledSideBar>
       <StyledMenu>
-        <BsFillPersonFill className="icons-person" />
-        <BsFillChatFill className="icons-chat" />
-        <FiMoreHorizontal className="icons-more" />
+        <Link to="/">
+          <BsFillPersonFill className="icons-person" />
+        </Link>
+        <Link to="/chat">
+          <BsFillChatFill className="icons-chat" />
+        </Link>
+        <Link to="/add">
+          <FiMoreHorizontal className="icons-more" />
+        </Link>
       </StyledMenu>
       <StyledSubMenu>
         <MdInsertEmoticon className="icons-sub" />
