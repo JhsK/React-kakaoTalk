@@ -56,7 +56,7 @@ const StyledSubMenu = styled.div`
   align-items: center;
   justify-content: flex-end;
   height: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 
   .icons-sub {
     font-size: 1.6rem;
