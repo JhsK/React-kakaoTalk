@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import imgProfile from "../../image/profile.jpg";
 import palette from "../../lib/styles/palette";
 
@@ -106,21 +106,36 @@ const StyledMyProfile = styled.div`
 `;
 
 const FriendList = () => {
+  const [friendState, setFriendState] = useState(true);
+
+  const FriendHiddenBtn = () => {
+    if (friendState === true) {
+      setFriendState(false);
+    } else {
+      setFriendState(true);
+    }
+  };
+
   return (
     <>
       <FriendHeader>
         <div className="header-title">친구 438</div>
-        <IoIosArrowUp className="header-icon" />
+        {friendState ? (
+          <IoIosArrowUp className="header-icon" onClick={FriendHiddenBtn} />
+        ) : (
+          <IoIosArrowDown className="header-icon" onClick={FriendHiddenBtn} />
+        )}
       </FriendHeader>
 
-      {friendsName.map((v, i) => (
-        <StyledMyProfile>
-          <div key={i} className="profile-section">
-            <figure className="profile-img"></figure>
-            <span className="profile-name">{v}</span>
-          </div>
-        </StyledMyProfile>
-      ))}
+      {friendState &&
+        friendsName.map((v, i) => (
+          <StyledMyProfile>
+            <div key={i} className="profile-section">
+              <figure className="profile-img"></figure>
+              <span className="profile-name">{v}</span>
+            </div>
+          </StyledMyProfile>
+        ))}
     </>
   );
 };
