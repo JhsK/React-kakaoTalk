@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHr = styled.div`
-  padding: 0.5rem 1.3rem;
+  padding: 0 1.3rem 0.5rem 1.3rem;
   opacity: 0.2;
 `;
 

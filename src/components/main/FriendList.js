@@ -60,14 +60,15 @@ const FriendList = () => {
         <div className="header-title">친구 438</div>
         <IoIosArrowUp className="header-icon" />
       </FriendHeader>
-      <StyledMyProfile>
-        {friendsName.map((v, i) => (
-          <div key={i} className="profile-section friend-profile">
+
+      {friendsName.map((v, i) => (
+        <StyledMyProfile>
+          <div key={i} className="profile-section">
             <figure className="profile-img"></figure>
             <span className="profile-name">{v}</span>
           </div>
-        ))}
-      </StyledMyProfile>
+        </StyledMyProfile>
+      ))}
     </>
   );
 };

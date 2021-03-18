@@ -7,6 +7,7 @@ import {
   AiOutlineUserAdd,
   AiOutlineCaretRight,
 } from "react-icons/ai";
+import palette from "../../lib/styles/palette";
 
 const ProfileNav = styled.div`
   .header-title {
@@ -68,15 +69,15 @@ export const StyledMyProfile = styled.div`
       margin-left: 0.2rem;
     }
   }
-  .friend-profile {
-    margin-bottom: 1.2rem;
-  }
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0 1.3rem;
+  padding: 1rem 1.3rem;
+  &:hover {
+    background: ${palette.gray[0]};
+  }
 `;
 
 const Profile = () => {
