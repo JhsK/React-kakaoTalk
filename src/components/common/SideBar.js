@@ -28,11 +28,13 @@ const StyledMenu = styled.div`
   .icons-person {
     font-size: 1.7rem;
     opacity: 0.4;
+    cursor: pointer;
   }
   .icons-chat {
     font-size: 1.7rem;
     opacity: 0.2;
     margin-top: 1.7rem;
+    cursor: pointer;
 
     &:hover {
       opacity: 0.3;
@@ -42,6 +44,7 @@ const StyledMenu = styled.div`
     font-size: 1.7rem;
     opacity: 0.2;
     margin-top: 1.7rem;
+    cursor: pointer;
 
     &:hover {
       opacity: 0.3;

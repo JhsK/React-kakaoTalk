@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import palette from "../../lib/styles/palette";
 import Profile from "./Profile";
 
 const StyledMainTemplate = styled.div`
