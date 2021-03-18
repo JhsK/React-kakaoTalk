@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import imgProfile from "../../image/profile.jpg";
+import StyledHr from "../../lib/styles/StyledHr";
 import {
   AiOutlineSearch,
   AiOutlineUserAdd,
@@ -27,17 +29,23 @@ const ProfileNav = styled.div`
   margin-top: 1.5rem;
 `;
 
-const StyledMyProfile = styled.div`
+export const StyledMyProfile = styled.div`
   .profile-section {
     display: flex;
     align-items: center;
+    flex-basis: 60%;
 
     .profile-img {
-      border: 1px solid #000;
-      border-radius: 23px;
+      border-radius: 20px;
       width: 50px;
       height: 50px;
       margin: 0;
+      outline: none;
+      background-image: url(${imgProfile});
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
     }
     .profile-name {
       font-weight: bold;
@@ -48,15 +56,20 @@ const StyledMyProfile = styled.div`
   .profile-music {
     border: 1px solid green;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding: 0.3rem 0.6rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    flex-basis: 30%;
 
     .music-icon {
-      font-size: 1rem;
+      font-size: 0.8rem;
       margin-left: 0.2rem;
     }
+  }
+  .friend-profile {
+    margin-bottom: 1.2rem;
   }
 
   display: flex;
@@ -64,11 +77,6 @@ const StyledMyProfile = styled.div`
   align-items: center;
   flex-wrap: wrap;
   padding: 0 1.3rem;
-`;
-
-export const StyledHr = styled.div`
-  padding: 0.7rem 1.3rem;
-  opacity: 0.2;
 `;
 
 const Profile = () => {
