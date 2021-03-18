@@ -30,7 +30,7 @@ const ProfileNav = styled.div`
   margin-top: 1.5rem;
 `;
 
-export const StyledMyProfile = styled.div`
+const StyledMyProfile = styled.div`
   .profile-section {
     display: flex;
     align-items: center;

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledMyProfile } from "./Profile";
 import { IoIosArrowUp } from "react-icons/io";
 
 const friendsName = [
