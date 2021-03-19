@@ -1,7 +1,14 @@
 import React from "react";
+import SideBar from "../components/common/SideBar";
+import AddTemplate from "../components/add/AddTemplate";
 
 const AddPage = () => {
-  return <div>AddPage</div>;
+  return (
+    <>
+      <SideBar />
+      <AddTemplate />
+    </>
+  );
 };
 
 export default AddPage;
