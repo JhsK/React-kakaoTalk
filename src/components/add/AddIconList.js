@@ -73,6 +73,7 @@ const StyledIconList = styled.div`
   align-items: center;
   flex-wrap: wrap;
   padding: 1.5rem 1rem;
+  cursor: pointer;
 `;
 
 const AddIconList = () => {
