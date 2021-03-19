@@ -7,7 +7,7 @@ const AddTemplate = () => {
   return (
     <BgTemplate>
       <AddCard />
-      {/* <AddIconList /> */}
+      <AddIconList />
     </BgTemplate>
   );
 };
