@@ -1,41 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import imgProfile from "../../image/profile.jpg";
-import palette from "../../lib/styles/palette";
+import axios from "axios";
 
-const friendsName = [
-  "가영",
-  "ㄱ윤진",
-  "강동욱",
-  "강병관",
-  "강창대",
-  "가영",
-  "ㄱ윤진",
-  "강동욱",
-  "강병관",
-  "강창대",
-  "가영",
-  "ㄱ윤진",
-  "강동욱",
-  "강병관",
-  "강창대",
-  "가영",
-  "ㄱ윤진",
-  "강동욱",
-  "강병관",
-  "강창대",
-  "가영",
-  "ㄱ윤진",
-  "강동욱",
-  "강병관",
-  "강창대",
-  "가영",
-  "ㄱ윤진",
-  "강동욱",
-  "강병관",
-  "강창대",
-];
+import palette from "../../lib/styles/palette";
+import imgProfile from "../../image/profile.jpg";
+
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { RiErrorWarningFill } from "react-icons/ri";
 
 const FriendHeader = styled.div`
   .header-title {
@@ -105,8 +76,24 @@ const StyledMyProfile = styled.div`
   }
 `;
 
+const FriendListURL = "https://sungtalk-fb266-default-rtdb.firebaseio.com/";
+
 const FriendList = () => {
   const [friendState, setFriendState] = useState(true);
+  const [friendApiList, setFriendApiList] = useState("");
+
+  useEffect(() => {
+    const fetchFriendList = async () => {
+      try {
+        const response = await axios.get(`${FriendListURL}/friendList.json`);
+        setFriendApiList(response.data);
+        console.log(response.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchFriendList();
+  }, []);
 
   const FriendHiddenBtn = () => {
     if (friendState === true) {
@@ -127,15 +114,14 @@ const FriendList = () => {
         )}
       </FriendHeader>
 
-      {friendState &&
-        friendsName.map((v, i) => (
-          <StyledMyProfile>
-            <div key={i} className="profile-section">
-              <figure className="profile-img"></figure>
-              <span className="profile-name">{v}</span>
-            </div>
-          </StyledMyProfile>
-        ))}
+      {Array.from(friendApiList).map((v, i) => (
+        <StyledMyProfile>
+          <div key={i} className="profile-section">
+            <figure className="profile-img"></figure>
+            <span className="profile-name">{v.friendName}</span>
+          </div>
+        </StyledMyProfile>
+      ))}
     </>
   );
 };
