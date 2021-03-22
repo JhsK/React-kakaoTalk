@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import AuthBg from "../../lib/styles/AuthBg";
-import AuthBtn from "../../lib/styles/AuthBtn";
+import AuthBg from "../../lib/styles/auth/AuthBg";
+import AuthBtn from "../../lib/styles/auth/AuthBtn";
 import kakoImgBtn from "../../image/kakao_login_small.png";
 
-const LoginTitle = styled.div`
+export const LoginTitle = styled.div`
   font-weight: bold;
   font-size: 3rem;
   margin: 2rem 0;
 `;
 
-const StyledForm = styled.div`
+export const StyledForm = styled.div`
   form {
     .input-title {
       font-size: 0.8rem;
@@ -56,7 +57,7 @@ const SnsBtn = styled.div`
   margin-top: 2rem;
 `;
 
-const Footer = styled.div`
+export const Footer = styled.div`
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -93,7 +94,9 @@ const LoginTemplate = () => {
         <span className="sns-title">Or Sign Up Using</span>
         <button />
       </SnsBtn>
-      <Footer>SING UP</Footer>
+      <Footer>
+        <Link to="/join">SING UP</Link>
+      </Footer>
     </AuthBg>
   );
 };
