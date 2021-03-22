@@ -10,10 +10,9 @@ const pageRouter = require("./routes/page");
 
 const back = express();
 back.set("port", process.env.PORT || 8001);
-back.set("view engine", "html");
 
 back.use(morgan("dev"));
-back.use(express.static(path.join));
+back.use(express.static(path.join(__dirname, "build")));
 back.use(express.json());
 back.use(express.urlencoded({ extended: false }));
 back.use(cookieParser(process.env.COOKIE_SECRET));
@@ -21,6 +20,7 @@ back.use(
   session({
     resave: false,
     saveUninitialized: false,
+    secret: process.env.COOKIE_SECRET,
     cookie: {
       httpOnly: true,
       secure: false,
