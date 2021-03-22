@@ -9,6 +9,7 @@ const AuthBtn = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+  margin-top: 1rem;
 
   &:hover {
     background: #abc8e2;
