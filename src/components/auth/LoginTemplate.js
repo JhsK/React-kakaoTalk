@@ -71,11 +71,11 @@ const LoginTemplate = () => {
     <AuthBg>
       <LoginTitle className="title">Login</LoginTitle>
       <StyledForm>
-        <form>
+        <form action="http://localhost:8001/auth/login" method="POST">
           <span className="input-title">Username</span>
           <input
             className="form-input"
-            autoComplete="username"
+            autoComplete="userId"
             name="username"
             placeholder="아이디"
           />

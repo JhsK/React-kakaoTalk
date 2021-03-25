@@ -9,12 +9,12 @@ const JoinTemplate = () => {
     <AuthBg>
       <LoginTitle className="title">회원가입</LoginTitle>
       <StyledForm>
-        <form>
+        <form action="http://localhost:8001/auth/join" method="POST">
           <span className="input-title">Username</span>
           <input
             className="form-input"
-            autoComplete="username"
-            name="username"
+            autoComplete="userId"
+            name="userId"
             placeholder="아이디"
           />
           <span className="input-title">Password</span>
@@ -28,7 +28,7 @@ const JoinTemplate = () => {
           <input
             className="form-input"
             autoComplete="password"
-            name="password"
+            name="validpassword"
             placeholder="비밀번호 확인"
             type="password"
           />
