@@ -12,7 +12,7 @@ const back = express();
 back.set("port", process.env.PORT || 8001);
 
 back.use(morgan("dev"));
-back.use(express.static(path.join(__dirname, "build")));
+// back.use(express.static(path.join(__dirname, "build")));
 back.use(express.json());
 back.use(express.urlencoded({ extended: false }));
 back.use(cookieParser(process.env.COOKIE_SECRET));
