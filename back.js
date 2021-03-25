@@ -4,12 +4,15 @@ const morgan = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const dotenv = require("dotenv");
+const passport = require("passport");
 
 dotenv.config();
 const pageRouter = require("./routes/page");
 const { sequelize } = require("./models");
+const passportConfig = require("./passport");
 
 const back = express();
+passportConfig();
 back.set("port", process.env.PORT || 8001);
 sequelize
   .sync({ force: false })
@@ -36,6 +39,9 @@ back.use(
     },
   })
 );
+
+back.use(passport.initialize());
+back.use(passport.session());
 
 back.use("/", pageRouter);
 
