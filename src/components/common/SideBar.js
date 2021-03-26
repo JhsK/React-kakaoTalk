@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 
 import { BsFillPersonFill, BsFillChatFill } from "react-icons/bs";
 import { FiMoreHorizontal } from "react-icons/fi";
-import { MdInsertEmoticon } from "react-icons/md";
 import { AiOutlineBell } from "react-icons/ai";
-import { RiSettings3Line } from "react-icons/ri";
+import { RiSettings3Line, RiLogoutBoxRLine } from "react-icons/ri";
 
 const StyledSideBar = styled.div`
   background: ${palette.gray[0]};
@@ -65,14 +64,19 @@ const StyledSubMenu = styled.div`
     font-size: 1.6rem;
     opacity: 0.3;
     margin-bottom: 1.3rem;
+    cursor: pointer;
   }
 `;
+
+const LogoutBtn = () => {
+  window.location.href = "http://localhost:8001/auth/logout";
+};
 
 const SideBar = () => {
   return (
     <StyledSideBar>
       <StyledMenu>
-        <Link to="/">
+        <Link to="/main">
           <BsFillPersonFill className="icons-person" />
         </Link>
         <Link to="/chat">
@@ -83,7 +87,7 @@ const SideBar = () => {
         </Link>
       </StyledMenu>
       <StyledSubMenu>
-        <MdInsertEmoticon className="icons-sub" />
+        <RiLogoutBoxRLine onClick={LogoutBtn} className="icons-sub" />
         <AiOutlineBell className="icons-sub" />
         <RiSettings3Line className="icons-sub" />
       </StyledSubMenu>

@@ -5,6 +5,7 @@ const path = require("path");
 const session = require("express-session");
 const dotenv = require("dotenv");
 const passport = require("passport");
+const cors = require("cors");
 
 dotenv.config();
 const pageRouter = require("./routes/page");
@@ -25,7 +26,7 @@ sequelize
   });
 
 back.use(morgan("dev"));
-// back.use(express.static(path.join(__dirname, "build")));
+back.use(express.static(path.join(__dirname, "public")));
 back.use(express.json());
 back.use(express.urlencoded({ extended: false }));
 back.use(cookieParser(process.env.COOKIE_SECRET));
@@ -44,6 +45,7 @@ back.use(
 back.use(passport.initialize());
 back.use(passport.session());
 
+back.use(cors());
 back.use("/", pageRouter);
 back.use("/auth", authRouter);
 
