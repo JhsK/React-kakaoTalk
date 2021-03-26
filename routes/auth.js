@@ -63,7 +63,7 @@ router.get(
     failureRedirect: "/",
   }),
   (req, res) => {
-    res.redirect("/");
+    res.redirect("http://localhost:3000/main");
   }
 );
 

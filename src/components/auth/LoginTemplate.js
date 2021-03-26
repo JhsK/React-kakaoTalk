@@ -92,7 +92,9 @@ const LoginTemplate = () => {
       </StyledForm>
       <SnsBtn>
         <span className="sns-title">Or Sign Up Using</span>
-        <button />
+        <a href="http://localhost:8001/auth/kakao">
+          <button />
+        </a>
       </SnsBtn>
       <Footer>
         <Link to="/join">SING UP</Link>
