@@ -18,7 +18,7 @@ router.post("/join", isNotLoggedIn, async (req, res, next) => {
       userId,
       password: hash,
     });
-    return res.redirect("http://localhost:3000/");
+    return res.redirect("/main");
   } catch (error) {
     console.error(error);
     res.json({
@@ -53,7 +53,7 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
         //   },
         // });
         // res.json(exImg);
-        res.redirect("http://localhost:3000/main");
+        res.redirect("/main");
       })();
     });
   })(req, res, next); // 미들웨어 내의 미들웨어에는 (req, res, next)를 붙입니다.
@@ -74,7 +74,7 @@ router.get(
     failureRedirect: "/",
   }),
   (req, res) => {
-    res.redirect("http://localhost:3000/main");
+    res.redirect("/main");
   }
 );
 

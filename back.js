@@ -26,7 +26,7 @@ sequelize
   });
 
 back.use(morgan("dev"));
-back.use(express.static(path.join(__dirname, "public")));
+back.use(express.static(path.join(__dirname, "build")));
 back.use(express.json());
 back.use(express.urlencoded({ extended: false }));
 back.use(cookieParser(process.env.COOKIE_SECRET));
