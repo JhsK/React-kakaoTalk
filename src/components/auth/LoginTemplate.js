@@ -76,7 +76,7 @@ const LoginTemplate = () => {
           <input
             className="form-input"
             autoComplete="userId"
-            name="username"
+            name="userId"
             placeholder="아이디"
           />
           <span className="input-title">Password</span>

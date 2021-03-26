@@ -11,8 +11,8 @@ import JoinPage from "./pages/JoinPage";
 const App = () => {
   return (
     <StyledBg>
-      {/* <Route component={MainPage} path="/" exact /> */}
       <Route component={LoginPage} path="/" exact />
+      <Route component={MainPage} path="/main" exact />
       <Route component={ChatPage} path="/chat" />
       <Route component={AddPage} path="/add" />
       <Route component={JoinPage} path="/join" />
