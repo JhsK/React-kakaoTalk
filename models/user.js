@@ -5,7 +5,7 @@ module.exports = class User extends Sequelize.Model {
     return super.init(
       {
         userId: {
-          type: Sequelize.STRING(20),
+          type: Sequelize.STRING(40),
           allowNull: true,
           unique: true,
         },
@@ -20,6 +20,14 @@ module.exports = class User extends Sequelize.Model {
         },
         snsId: {
           type: Sequelize.STRING(30),
+          allowNull: true,
+        },
+        nick: {
+          type: Sequelize.STRING(20),
+          allowNull: true,
+        },
+        profile_image: {
+          type: Sequelize.STRING(120),
           allowNull: true,
         },
       },
