@@ -71,7 +71,7 @@ const LoginTemplate = () => {
     <AuthBg>
       <LoginTitle className="title">Login</LoginTitle>
       <StyledForm>
-        <form action="http://localhost:8001/auth/login" method="POST">
+        <form action="auth/login" method="POST">
           <span className="input-title">Username</span>
           <input
             className="form-input"
@@ -92,7 +92,7 @@ const LoginTemplate = () => {
       </StyledForm>
       <SnsBtn>
         <span className="sns-title">Or Sign Up Using</span>
-        <a href="http://localhost:8001/auth/kakao">
+        <a href="auth/kakao">
           <button />
         </a>
       </SnsBtn>

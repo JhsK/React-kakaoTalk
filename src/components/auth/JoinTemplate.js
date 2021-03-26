@@ -9,7 +9,7 @@ const JoinTemplate = () => {
     <AuthBg>
       <LoginTitle className="title">회원가입</LoginTitle>
       <StyledForm>
-        <form action="http://localhost:8001/auth/join" method="POST">
+        <form action="auth/join" method="POST">
           <span className="input-title">Username</span>
           <input
             className="form-input"
