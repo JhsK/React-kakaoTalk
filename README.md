@@ -14,6 +14,7 @@
 - passport
 - sequelize
 - mysql
+- express
 
 <br>
 
